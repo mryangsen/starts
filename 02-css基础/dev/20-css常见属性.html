@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.d1{
+			/*可以同时写多个字体 电脑优先展示第一个能用的*/
+			font-family: 'Microsoft YaHei','SimHei','SimSun';
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			font-size: 30px;
+			color: red;
+			/*left(默认)|center|right*/
+			text-align:center;
+			/*100-900  500正常
+			lighter normal  bolder*/
+			font-weight: bolder;
+			/*Italic   斜体 / normal  正常*/
+			font-style: italic;
+
+		}
+		.d11{
+			width: 200px;
+			height: 200px;
+			background-color: orange;
+			color: blue;
+			text-align: center;
+			/*font: font-style font-weight  font-size/line-height  font-family;*/
+			/*对字体样式的缩写
+				行高的单位: 1. 直接写像素px;
+							2.  倍数 1.2
+							3.  百分比 120%
+			*/
+			font: italic bolder 30px/120% 'Microsoft YaHei','SimHei','SimSun';
+		}
+		.d2{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			color: blue;
+			font-size: 30px;
+			/*行高 一般来说 行高都比文字大
+				单行文本垂直居中: 行高=父类盒子高度即可;
+			*/
+			line-height: 200px;
+		}
+		.btn{
+			width: 220px;
+			height: 50px;
+			background-color: red;
+			color: #fff;
+			font-size:20px;
+			/*使单行文本左右垂直居中 按钮的实现方式*/
+			text-align:center;
+			line-height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<!-- emmet 插件  具体方式 自行百度 -->
+	<div class="d1">
+		不凡学院
+	</div>
+	<div class="d11">
+		不凡学院1
+	</div>
+	<div class="d2">
+		不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院
+	</div>
+	<div class="btn">
+		提交
+	</div>
+	
+</body>
+</html>

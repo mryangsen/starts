@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:200px;
+			height: 200px;
+			background-color: green;
+		}
+		/*后代选择器*/
+		.box .innerbox{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		/*.box .innerbox .innerbox2{*/
+			/*后代选择器 中间是必须有空格 而且不管是子类还是孙子类 都是后代*/
+		.box .innerbox2{
+			width: 50px;
+			height: 50px;
+			background-color: purple;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">div1
+		<div class="innerbox">
+			div2
+			<div class="innerbox2">
+				
+			</div>
+		</div>
+	</div>
+	<div class="innerbox">
+		
+	</div>
+</body>
+</html>

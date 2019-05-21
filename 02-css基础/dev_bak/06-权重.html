@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 就近原则 -->
+	<link rel="stylesheet" href="style.css">
+	<!-- 由于css的层叠性 存在样式冲突 权重问题 -->
+	<style>
+		/*不同的选择器 权重不同
+			1. 相同选择器,后面覆盖前面样式
+			2. 不同选择器需要对比权重大小
+				- class选择器>标签选择器
+				- id选择器>class选择器
+				- 内部样式> id选择器
+		*/
+		p{
+			font-size:30px;
+			color: green;
+		}
+		.p1{
+			color: purple;
+			background-color: pink;
+		}
+		#p1{
+			color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<p class="p1" id="p1" style="color:orange;">欢迎来到不凡学院</p>
+	<p class="p1">欢迎来到不凡学院</p>
+</body>
+</html>

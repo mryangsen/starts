@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*body 有默认的maring/padding*/
+		/*把所有的元素的默认maring/padding去掉*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.d1{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			/*外边距为100px*/
+			margin:100px;
+		}
+		.d2{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin:150px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 当两个div 垂直摆放  同时设置maring 机会出现"垂直重叠"的现象.  重要!!!
+	谁的大 用哪个
+	 -->
+	<div class="d1">
+		
+	</div>
+	<div class="d2">
+		
+	</div>
+	<!-- <p>不凡学院</p> -->
+	
+</body>
+</html>

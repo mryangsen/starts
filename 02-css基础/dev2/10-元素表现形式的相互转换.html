@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	/*<!-- 不同的元素的表现形式是可以相互转换的 -->*/
+		.d1{
+			/*block  块状
+			inline-block 行内块
+			inline  行内
+			none 隐藏*/
+			/*在转换行内块的时候 元素之间的换行会被当做空格处理*/
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		.d2{
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+		/*为什么要转换?
+			行内元素==> 块状元素用的最多
+		*/
+		.btn{
+			/*display: inline-block;*/
+			display: block;
+			width: 220px;
+			height: 30px;
+			background-color: red;
+			font-size: 20px;
+			text-align: center;
+			/*垂直居中*/
+			line-height: 30px;
+			color: #fff;
+			/*补充css 去掉a标签下划线*/
+			/*none 没有下划线
+			line-through  打折线
+			underline 下划线*/
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="d1"></div>
+	<div class="d2"></div>
+	<!-- <div class="btn">提交</div> -->
+	<a class="btn" href="http://www.baidu.com">百度</a>
+</body>
+</html>

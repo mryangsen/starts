@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		img{
+			width: 100px;
+			height: 100px;
+		}
+		input{
+			width: 120px;
+			height: 30px;
+		}
+		a{
+			width: 200px;
+			height: 200px;
+		}
+		span{
+			width: 200px;
+			height: 200px;
+		}
+		em{
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 根据标签的表现形式,分为3类
+	1.块状元素: 会自动换行  宽高有效   
+		div  p   h1~h6  br  hr  table form ul  li ol  dl dt dd
+	2.行内块元素: 不会自动换行 宽高有效
+		img input th td
+	3.行内元素: 不会自动换行 宽高无效 
+		a span  em  i   b  font  strong ins  del sub  sup 
+	-->
+
+	<div>
+		div
+	</div>
+	<div>
+		div
+	</div>
+	<p>p</p>
+	<p>p</p>
+	<h1>h1</h1>
+	<h2>h2</h2>
+	<table>
+		<tr>
+			<th>序号</th>
+			<th>姓名</th>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<th>序号</th>
+			<th>姓名</th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<form>
+		用户名: <input type="text">
+		密码: <input type="text">
+
+	</form>
+	<form>
+		用户名: <input type="text">
+
+	</form>
+	<ul>
+		<li>美食</li>
+		<li>箱包</li>
+	</ul>
+	<ul>
+		<li>美食</li>
+		<li>箱包</li>
+	</ul>
+	<img src="avatar.jpg" alt="">
+	<img src="avatar.jpg" alt="">
+	<hr>
+	<a href="#">百度</a>
+	<a href="#">京东</a>
+	<span>span</span>
+	<span>span</span>
+	<em>em</em><em>em</em>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*参考
+		http://www.jq22.com/demo/jquerynav201811142243/
+		*/
+		/*1.重置样式*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.head{
+			width: 100%;
+			height: 75px;
+			/*background-color: green;*/
+			/*css3阴影*/
+			box-shadow:0 4px 10px rgba(0,0,0,.5);
+
+		}
+		.head .head-center{
+			position: relative;
+			width: 1000px;
+			height: 100%;
+			/*background-color: pink;*/
+			margin: 0 auto;
+			/*防止嵌套崩塌*/
+			overflow: hidden;
+		}
+		.head .head-center .logo{
+			display: block;
+			width: 60px;
+			height: 60px;
+			background-color: yellow;
+			margin-top: 7px;
+			background: url(img/logo.jpg) no-repeat center;
+			background-size: 60px 60px;
+			text-indent: -99999px;
+		}
+		.head .head-center .nav{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			/*宽度自适应
+			width:?;*/
+			/*background-color: lightskyblue;*/
+		}
+		.head .head-center .nav .li-item{
+			float:left;
+			height: 100%;
+			margin-left: 20px;
+		}
+		.head .head-center .nav .li-item a{
+			/*热区要跟父类一阳大*/
+			display: block;
+			width: 100%;
+			height: 72px;
+			color: #333;
+			text-align: center;
+			line-height: 75px;
+		}
+		.head .head-center .nav .li-item:hover a{
+			color: orange;
+			border-bottom: 3px solid orange;
+		}
+		/*非常重要!! 标识位思想*/
+		.head .head-center .nav .li-item.active a{
+			color: orange;
+			border-bottom: 3px solid orange;
+		}
+	</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="head">
+		<!-- 版心 -->
+		<div class="head-center">
+			<!-- .logo的class seo权重很高 -->
+			<a class="logo" href="#">
+				不凡学院
+			</a>
+			<ul class="nav">
+				<!-- (li.li-item>a[href="#"]{关于我们$})*8 -->
+				<li class="li-item"><a href="#">关于我们1</a></li>
+				<li class="li-item"><a href="#">关于我们2</a></li>
+				<li class="li-item"><a href="#">关于我们3</a></li>
+				<li class="li-item active"><a href="#">关于我们4</a></li>
+				<li class="li-item"><a href="#">关于我们5</a></li>
+				<li class="li-item"><a href="#">关于我们6</a></li>
+				<li class="li-item"><a href="#">关于我们7</a></li>
+				<li class="li-item"><a href="#">关于我们8</a></li>	
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
