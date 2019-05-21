@@ -1,0 +1,77 @@
+  面试题: 怎么看待html的语义化?
+	<!-- html标签语义化: 根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析 -->
+   <!-- 为什么要语义化？
+			
+		为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看；
+		用户体验：例如title、alt用于解释名词或解释图片信息、label标签的活用；
+		有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；
+		方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；
+		便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
+		3、写HTML代码时应注意什么？
+
+		尽可能少的使用无语义的标签div和span；
+		在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；
+		不要使用纯样式标签，如：b、font、u等，改用css设置。
+		需要强调的文本，可以包含在strong或者em标签中（浏览器预设样式，能用CSS指定就不用他们），strong默认样式是加粗（不要用b），em是斜体（不用i）；
+		使用表格时，标题要用caption，表头用thead，主体部分用tbody包围，尾部用tfoot包围。表头和一般单元格要区分开，表头用th，单元格用td；
+		表单域要用fieldset标签包起来，并用legend标签说明表单的用途；
+		每个input标签对应的说明文本都需要使用label标签，并且通过为input设置id属性，在lable标签中设置for=someld来让说明文本和相对应的input关联起来。 -->
+
+
+<!-- 1. 关键词很重要  根据经验,title 目前应该比 keywords 权重高
+		 2. 注意清风算法
+		 	a) 在标题<head>部分不能随意堆叠关键词
+		 	b) img不能
+		 	c) 可以在页面的内容的适当部分体现关键词
+		 	d) logo 一定要写关键词
+	 	 3. 注意网站链接(外链 内链)
+	 	 4. 优质内容 原创内容 体现关键词
+	 	 5. 更新 经常更新
+  阻止冒泡方法代码:
+    count.onclick=function(e){
+                e.stopPropagation();           
+              }
+ count.addEventListener("click", function () {
+                    event.stopPropagation ? event.stopPropagation() : event.cancelBubble = true;
+                }, false);
+
+
+clientLeft,clientTop:表示内容区域的左上角相对于整个元素左上角的位置（包括边框）。(取决于边框的像数值？)
+
+clientWidth,clientHeight:内容区域的宽高，不包括边框宽度值。
+
+offsetLeft,offsetTop:相对于最近的祖先定位元素。
+
+offsetParent:某元素的父元素 例如：this.offsetParent.tagName.toLowerCase() 得到body...
+
+offsetWidth,offsetHeight 整个元素的尺寸(不包括变宽的宽度)
+
+scrollLeft,scrollTop:元素滚动的大小
+
+scrollWidth,scrollHeight:整个内容区域的宽度(包括需拉动滚动条隐藏起来的那些部分) scrollTop+clientWidth
+
+
+
+移动端拓展:
+禁止缩放
+
+<meta name="viewport" content="user-scalable=no">
+
+设置缩放
+
+<meta name="viewport" content="initial-scale=2">
+
+使用initial-scale有一个副作用：同时也会将布局视口的尺寸设置为缩放后的尺寸。所以initial-scale=1与width=device-width的效果是一样的。
+完美视口
+
+解决各种浏览器兼容问题的理想视口设置
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+?	JSON.parse()方法:将JSON字符串转化为JavaScript对象
+?	JSON.stringify()方法:将JavaScript对象,转化为JSON字符串
+
+js的基本数据类型和复杂数据类型区别(面试题)!!
+1.区别
+基本数据类型把数据名和值直接存储在栈当中
+复杂数据类型在栈中存储数据名和一个堆的地址，在堆中存储属性及值，访问时先从栈中获取地址，再到堆中拿出相应的值

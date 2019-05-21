@@ -1,0 +1,19 @@
++ git status 查看文件是否被暂存或存储 ,不是必须的命令
++ git add . 把文件存入暂存区
++ git commit -m'xxxx'  把文件存入到存储区  -m'xxx'不能忘
+
++ 添加远程源将本地仓库和远程仓库建立连接
+```
+	//nevermo2013/noteH5.git 每个人不同 看个人设置
+	git remote add origin https://github.com/nevermo2013/noteH5.git
+```
++ git push -u origin master  把本地文件提到到远程github
++ 第二次暂存 提交  后 不需要再配置源信息,提交只需要Git push即可
+https://blog.csdn.net/rocling/article/details/82956402
+
+
+1. git init只是创建了一个名为.git的隐藏目录，这个目录就是存储我们历史版本的仓库，ls -al 可以查看。
+2. 通过git status可以检测当前仓库文件的状态
+3. git add 文件名/ 文件路径 “*”或-A代表所有
+一般用  git add  .    添加所有
+
