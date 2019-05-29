@@ -1,0 +1,35 @@
+1. 结合bootstrap/layui 实现数据对象的增删改查 要求展示数据列表 修改有弹窗
+2. 使用现有电影api 实现电影数据列表展示,点击可查看明细
+
+豆瓣电影端口
+ //    http://www.bufantec.com/api/douban/movie/in_theaters 
+  //    http://www.bufantec.com/api/douban/movie/coming_soon 
+    //    http://www.bufantec.com/api/douban/movie/top250
+   //    http://www.bufantec.com/api/douban/movie/subject/:id
+
+  var baseUrl = 'http://www.bufantec.com/api/douban/movie/'
+
+
+
+
+
+跨域接口请求
+created:function (){
+    axios.get('/api/movie/in_theaters')
+      //成功返回
+      .then(response=>{
+         console.log(response);
+      })
+      //失败返回
+      .catch(error=>{
+          console.log(error);
+      })
+ }
+// 为给定 ID 的 user 创建请求
+axios.get('/user?ID=12345')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });

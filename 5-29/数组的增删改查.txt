@@ -1,0 +1,62 @@
+JavaScript中数组的增删改查
+                                          
+
+数组的增加
+
+ 
+
+ary.push()   向数组末尾添加元素，返回的是添加后新数组的长度，原有数组改变
+ary.unshift()  向数组开头添加元素，返回的是添加后新数组的长度，原有数组改变
+ var ary=[1,2,3,4];
+   var res=ary.unshift(6);
+   console.log(res); ---->5   返回的是新数组的长度
+ary.splice(n,m,x)从索引n开始删除m个元素，把新增的元素X放在索引n的前面，把删除的元素当成一个新数组返回，原有数组改变。
+ary.splice(n,0,x)从索引n开始删除0个元素，把新增加的元素x放在索引n的前面，返回的是一个空数组，原有数组改变。
+ary.splice(n,m)从索引n开始删除m个元素，把删除的内容当做新数组返回，原有数组改变
+splice(0,0,x)----->unshift
+ 
+
+数组的删除
+
+ary.pop() 删除数组的最后一项，返回的是删除的那一项，原有数组改变
+ary.shift() 删除数组的的第一项，返回的是删除的那一项，原有数组改变
+var ary=[5,8,3,4,6];
+var res=ary.shift();
+console.dir(res);---->5 返回数组第一项
+删除数组最后一项的内容 ary.splice(ary.length-1,1)  //ary.length-1 数组最后一项的内容         ary.length-=1     ary.length--
+    var ary=[5,8,3,4,6];
+//     ary.splice(ary.length-1,1);
+//     ary.length-=1;
+      console.dir(ary);---->输出的是[5,8,3,4]
+数组的查询和复制
+
+slice(n,m)从索引n开始，找到索引m处，把找到的内容作为新的数组返回，原有数组不改变        
+slice(n-1,m)把数组的第n项到第m项提取出来
+slice(n) 从索引n开始查找到数组末尾
+slice(0) slice() 将原有数组复制一份 属于数组克隆  
+concat() 也可以实现数组克隆   
+concat的本意是实现数组的拼接 ary.concat(ary2) 把两个数组进行拼接
+数组转化为字符串
+
+tostring把数组的每一项拿出来用逗号隔开，原有数组不变
+join("+")把数组的每一项拿出来用指定分隔符隔开
+数组求和
+var ary=[5,8,3,4,6];
+var str=ary.join("+");
+var total=eval(str);
+console.dir(total);  //将指定字符串变成真正的表达式执行
+ var ary=[5,8,3,4,6];
+      var total=0;
+     for(var i=0;i<ary.length;i++){
+         total+=ary[i];
+     }
+     console.dir(total);  
+数组的排列和排序
+
+reverse() 把数组倒过来排序，原有数组改变
+sort 可以实现由大到小或者由小到大的排序 但是直接写sort只能排序十以内的数字  ary.sort(function(a,b){return (a-b);})
+一些常用的方法 但是不兼容
+
+indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+foreach
+map

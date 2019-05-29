@@ -1,0 +1,44 @@
+https://www.cnblogs.com/hongxuejiao/p/4783150.html     相关js详细介绍
+
+原始数据类型: number,string,boolean,undefined, null,object
+基本类型(简单类型),值类型: number,string,boolean
+复杂类型(引用类型):object
+空类型:undefined,null
+
+1.区别
+基本数据类型把数据名和值直接存储在栈当中
+复杂数据类型在栈中存储数据名和一个堆的地址，在堆中存储属性及值，访问时先从栈中获取地址，再到堆中拿出相应的值
+2 不同数据类型作为参数时 函数内部对参数的修改是否改变外部变量的值
+基本数据类型作为参数时，函数内部对参数值的修改不会改变外部变量的值
+
+function a(s){//定义以s为参数的函数，返回s的值
+    s=100;
+    return s;
+    }
+    var y=2;
+    a(y);//y作为参数调用函数a
+    console.log(y);//y还是为2
+
+结果还是1因为把y的值给s时是简单的复制了一份，y和s可以单独操作不相互影响
+
+复杂数据类型作为参数时，函数内部对参数值的修改会改变外部变量的值
+
+因为复杂数据类型赋值是把栈中对象的地址赋给变量，函数内外两个变量指向同一个对象，所以只要对象的属性值改变，两个变量值都会改变
+
+function student(age,name,grade){
+    this.age=age;
+    this.name=name;
+    this.score=grade;
+}
+
+var s1=new student(18,"wjq",2);//创建一个student对象
+
+function a(s){
+
+     s.name="xxx";
+
+}
+a(s1)//把s1赋给s
+console.log(s1.name);//输出xxx
+
+所以要弄懂js中简单数据类型和复杂数据类型的区别，关键还要搞懂两个在内存中的存储过程。

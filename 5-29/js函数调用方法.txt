@@ -1,0 +1,101 @@
+js的函数调用会免费奉送两个而外的参数就是 this 和 arguments 。arguments是参数组，他并不是一个真实的数组，但是可以使用.length方法获得长度。
+
+书上有说4中调用方式：
+
+方法调用模式
+函数调用模式
+构造器调用模式
+apply调用模式
+下面我们来看看一些实例更好理解。
+
+1：方法调用模式。
+
+请注意this此时指向myobject。
+
+/*方法调用模式*/
+    var myobject={
+            value:0,
+            inc:function(){
+                    alert(this.value)
+                }
+        }
+    myobject.inc()
+
+ 
+
+2：函数调用模式
+
+请注意this此时指向window
+
+/*函数调用模式*/
+    
+    var add=function(a,b){
+        alert(this)//this被绑顶到window
+            return a+b;
+        }
+    var sum=add(3,4);
+    alert(sum)
+
+ 
+
+3：构造器调用模式
+
+javascript语言精粹一书建议摒弃这中方式。因为有更好的方式。这里先不介绍。下次发表博文的时候贴出来。
+
+会在这里加一个连接。
+
+/*构造器调用模式  摒弃*/
+    
+    var quo=function(string){
+            this.status=string;
+        }
+    quo.prototype.get_status=function(){
+            return this.status;
+        }
+    var qq=new quo("aaa");
+    alert(qq.get_status());
+
+ 
+
+4：apply调用模式
+
+==我们可以来看一个更有用的apply实例。看最下面的代码。
+
+ 
+
+/*apply*/
+    //注意使用了上面的sum函数
+    //与myobject
+    //这中调用方式的优点在于可以指向this指向的对象。
+    //apply的第一个参数就是this指针要指向的对象
+    var arr=[10,20];
+    var sum=add.apply(myobject,arr);
+    alert(sum);
+
+ 
+
+看这个apply真正应用。bind这是一个绑定时间的函数
+
+var bind=function(object,type,fn){
+            if(object.attachEvent){//IE浏览器
+                    object.attachEvent("on"+type,(function(){
+                                                           return function(event){
+                                                               window.event.cancelBubble=true;//停止时间冒泡
+                                                               object.attachEvent=[fn.apply(object)];//----这里我要讲的是这里
+                                                               //在IE里用attachEvent添加一个时间绑定以后。
+                                                               //this的指向不是到object对象本身所以。我们绑定的function里的this.id是无法正常工作的。
+                                                               //但是如果我们用fn.apply(object)
+                                                               //这里可以看出我们是把apply的第一个对象也就是this的指向变更给了object所以this.id就变成了
+                                                               //object.id 可以正常工作了。
+                                                               
+                                                               }
+                                                           })(object),false);
+                }else if(object.addEventListener){//其他浏览器
+                        object.addEventListener(type,function(event){
+                                                              event.stopPropagation();//停止时间冒泡
+                                                              fn.apply(this)
+                                                              });
+                    }
+            
+        }
+    bind(document.getElementById("aaa"),"click",function(){alert(this.id)}); 

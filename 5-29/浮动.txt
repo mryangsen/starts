@@ -1,0 +1,23 @@
+                                                                    浮动 讲解
+ 一 标准流（normal flow）： 在页面中标签（元素）默认的显示方式就是标准流的显示方式。
+ 二 浮动 用法    ：  float: left /right             特点： 1. 浮动的元素不占位置（脱标）。2，浮动可以让块级元素在一行上显示（脱标），
+3， 可以进行元素的模式转换（行内块）
+   作用：1，设置文字环绕效果（包裹性）， 2， 让块级元素在一行上显示使用浮动  一般 用1111.。。制作网页导航    2.。。网页布局。
+    使用：第一种：用clear:left/right/both(放在浮动元素下面用div标签包含使用清除浮动元素标签)
+             第二种：给父元素设置overflow；hidden;       可以将超出元素的部分进行隐藏。
+            第三种使用伪元素清除浮动（推荐使用）
+             .clearfix:aftar{content: "":      height:0;      line_height:0;      display:black;    clear:both;    visibility:hidden;}
+             .clearfix{  zom:0} 兼容IE
+       清除浮动的时机：   1.  父元素没有高度   2.父容器中所有的子集都设置了浮动.
+ 三 .样式初始化 ： 将页面中标签的样式设置一个统一的默认样式。
+ 四 . overflow 介绍 （可解决元素塌陷和清除浮动）
+    1， overflow: visible;   默认值  默认可将超出部分显示
+          overflow:hidden;       可将超出部分隐藏 
+          overflow:scroll;       超出 设置滚动条
+         overflow: auto;      根据字数多少自动适应设置
+五.伪元素   (选择区域文字颜色改变)
+    div:：seplection{
+   background-color：red;
+  color:green;
+ }
+      

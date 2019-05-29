@@ -1,0 +1,11 @@
+http://www.68design.net/deal/ 接单求职网站
+https://juejin.im/post/5ce8e6e3f265da1b700484b1 面试的步标准答案网址
+
+饿了么公司基于vue开的的vue的Ui组件库		????????Element Ui? ? 基于vue? pc端的UI框架? ??http://element-cn.eleme.io/#/zh-CN		????????MintUi? ? ? ?  基于vue 移动端的ui框架? ? https://mint-ui.github.io/#!/zh-cn
+
+作者：牧码狗
+链接：https://www.jianshu.com/p/ed612b7ad565
+来源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+
+https://www.wappalyzer.com/installed Wappalyzer图标将更改为显示正在使用的主要技术
